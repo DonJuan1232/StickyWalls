@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Destroy : MonoBehaviour
 {
@@ -10,5 +11,12 @@ public class Destroy : MonoBehaviour
         {
             Destroy(other.gameObject);
         }
+
+        if(other.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+
     }
 }

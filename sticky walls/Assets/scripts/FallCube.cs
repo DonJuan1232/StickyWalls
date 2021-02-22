@@ -24,6 +24,9 @@ public class FallCube : MonoBehaviour
 
     public GameObject deathScreen;
 
+    public AudioSource deathsound;
+    public AudioSource invissound;
+
     /*public animator deathAnim; */
 
 
@@ -59,8 +62,9 @@ public class FallCube : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "invis")
+        if (other.gameObject.tag == "invis" && invins == false)
         {
+            invissound.Play();
             invins = true;
             Destroy(other.gameObject);
             StartCoroutine(invisOn());
@@ -69,6 +73,7 @@ public class FallCube : MonoBehaviour
 
         if(other.gameObject.tag == "invins" && invins == true)
         {
+            invissound.Play();
             StopCoroutine(invisOn());
             StartCoroutine(invisOn());
             invins = true;
@@ -100,7 +105,7 @@ public class FallCube : MonoBehaviour
 
     IEnumerator killPlayer()
     {
-        //FindObjectOfType<AudioManager>().Play("Death");
+        deathsound.Play();
 
         playerMesh.enabled = false;
 

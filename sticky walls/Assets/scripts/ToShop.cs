@@ -11,6 +11,11 @@ public class ToShop : MonoBehaviour
     public void toShop()
     {
         shop.SetActive(true);
+
+        if (settings.activeSelf)
+        {
+            settings.SetActive(false);
+        }
     }
 
     public void toMenu()
@@ -23,6 +28,11 @@ public class ToShop : MonoBehaviour
     public void toSettings()
     {
         settings.SetActive(true);
+
+        if (shop.activeSelf)
+        {
+            shop.SetActive(false);
+        }
     }
 
     public void toMenu2()

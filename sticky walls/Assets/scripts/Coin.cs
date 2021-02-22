@@ -8,6 +8,9 @@ public class Coin : MonoBehaviour
 
     int coin;
 
+    public AudioSource coinsound;
+
+
 
     private void Start()
     {
@@ -20,7 +23,7 @@ public class Coin : MonoBehaviour
         if (collision.gameObject.tag == "Coin")
         {
             ScoreText.coinAmount += coin;
-            //FindObjectOfType<AudioManager>().Play("coin");
+            coinsound.Play();
             Destroy(collision.gameObject);
 
         }

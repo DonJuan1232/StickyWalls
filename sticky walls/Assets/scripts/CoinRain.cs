@@ -11,6 +11,8 @@ public class CoinRain : MonoBehaviour
     public GameObject coinspawner3;
     public GameObject coinspawner4;
 
+    public AudioSource coinrainsound;
+
     public void Start()
     {
         waitTime = 8;
@@ -23,6 +25,7 @@ public class CoinRain : MonoBehaviour
     {
         if (other.gameObject.tag == "CoinRain")
         {
+            coinrainsound.Play();
             StartCoroutine(coinRain());
             Destroy(other.gameObject);
         }

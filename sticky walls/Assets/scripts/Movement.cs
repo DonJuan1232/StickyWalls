@@ -10,12 +10,15 @@ public class Movement : MonoBehaviour
 
     public Rigidbody rb;
 
+    public AudioSource jumpsound;
+
 
 
     public void right()
     {
         if (WallTouchR == true)
-        {            
+        {
+            jumpsound.Play();
             rb.AddForce(-1500, 0, 0);
             new WaitForSeconds(0.5f);
             WallTouchR = false;
@@ -28,6 +31,7 @@ public class Movement : MonoBehaviour
     {
         if (WallTouchL == true)
         {
+            jumpsound.Play();
             rb.AddForce(1500, 0, 0);
             new WaitForSeconds(0.5f);
             WallTouchL = false;

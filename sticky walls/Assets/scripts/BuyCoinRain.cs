@@ -56,6 +56,8 @@ public class BuyCoinRain : MonoBehaviour
             //Debug.Log("works2");
         }
 
+        bought = upgradeCrBuy1;
+
 
         
     }

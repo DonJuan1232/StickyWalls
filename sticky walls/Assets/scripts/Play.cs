@@ -1,11 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Play : MonoBehaviour
 {
 
     public GameObject menu;
+
+    public GameObject countdown;
+    public Text countdowntext;
+    public int countdowntime = 3;
 
 
     public void PauseGame()
@@ -21,6 +26,9 @@ public class Play : MonoBehaviour
 
         menu.SetActive(false);
     }
+
+
+    
 
 
 }
