@@ -14,7 +14,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        coin = 1;
+        coin = 100;
     }
 
     void OnTriggerEnter(Collider collision)

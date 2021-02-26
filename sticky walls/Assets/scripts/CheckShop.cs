@@ -112,7 +112,7 @@ public class CheckShop : MonoBehaviour
 
 
         //invis check shop
-        bought2 = PlayerPrefs.GetInt("Bought");
+        bought2 = PlayerPrefs.GetInt("Bought2");
         upgradeCrBuy3 = PlayerPrefs.GetInt("UpgradeCrBuy");
 
         if (bought2 == 1 && upgradeCrBuy3 == 1)

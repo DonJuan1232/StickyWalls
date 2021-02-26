@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinMagnet : MonoBehaviour
 {
 
-    
+
 
     public GameObject Player;
 
@@ -15,19 +15,18 @@ public class CoinMagnet : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Pickup();
+            StartCoroutine(pickedUp());
         }
     }
 
 
-    void Pickup()
-    {
-        
-
-        
+    IEnumerator pickedUp(){
 
 
-        Destroy(gameObject);
+
+
+
+        yield return 0;
     }
 
 }

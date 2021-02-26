@@ -55,7 +55,10 @@ public class BuyInvis : MonoBehaviour
             //Debug.Log("works2");
         }
 
-        bought = upgradeIvBuy1;
+        /*if (upgradeIvBuy1 != bought)
+        {
+            upgradeIvBuy1 = bought;
+        }*/
 
     }
 
