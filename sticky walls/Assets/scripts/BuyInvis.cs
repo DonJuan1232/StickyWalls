@@ -96,7 +96,7 @@ public class BuyInvis : MonoBehaviour
 
             //after upgrade
 
-            text2.text = "Press to upgrade invincibility to level 3";
+            //text2.text = "Press to upgrade invincibility to level 3";
 
             text.text = "50 coins";
 
@@ -134,7 +134,7 @@ public class BuyInvis : MonoBehaviour
 
             //after upgrade
 
-            text3.text = "Press to upgrade invincibility to level 4";
+            //text3.text = "Press to upgrade invincibility to level 4";
 
             text.text = "100 coins";
 
@@ -170,7 +170,7 @@ public class BuyInvis : MonoBehaviour
 
             //after upgrade
 
-            text4.text = "Press to upgrade invincibility to level 5";
+            //text4.text = "Press to upgrade invincibility to level 5";
 
             text.text = "200 coins";
 
@@ -208,7 +208,7 @@ public class BuyInvis : MonoBehaviour
 
             //after upgrade
 
-            text5.text = "Press to upgrade invincibility to level 6";
+            //text5.text = "Press to upgrade invincibility to level 6";
 
             text.text = "300 coins";
 
