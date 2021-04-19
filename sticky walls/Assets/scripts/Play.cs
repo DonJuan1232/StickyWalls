@@ -28,7 +28,24 @@ public class Play : MonoBehaviour
     }
 
 
-    
+    public void Update()
+    {
+        void OnApplicationFocus(bool pauseStatus)
+        {
+            if (pauseStatus)
+            {
+                Time.timeScale = 1;
+
+                menu.SetActive(false);
+            }
+            else
+            {
+                Time.timeScale = 0;
+
+                menu.SetActive(true);
+            }
+        }
+    }
 
 
 }

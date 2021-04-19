@@ -7,6 +7,8 @@ public class ToShop : MonoBehaviour
 
     public GameObject shop;
     public GameObject settings;
+    public GameObject about1;
+    public GameObject about2;
 
     public void toShop()
     {
@@ -21,6 +23,16 @@ public class ToShop : MonoBehaviour
     public void toMenu()
     {
         shop.SetActive(false);
+
+        if (about1.activeSelf)
+        {
+            about1.SetActive(false);
+        }
+
+        if (about2.activeSelf)
+        {
+            about2.SetActive(false);
+        }
     }
 
 
@@ -38,6 +50,27 @@ public class ToShop : MonoBehaviour
     public void toMenu2()
     {
         settings.SetActive(false);
+    }
+
+    public void toAboutCr()
+    {
+        about1.SetActive(true);
+    }
+
+    public void toAboutCr2()
+    {
+        about1.SetActive(false);
+    }
+
+
+    public void toAboutInvis()
+    {
+        about2.SetActive(true);
+    }
+
+    public void toAboutInvis2()
+    {
+        about2.SetActive(false);
     }
 
 }

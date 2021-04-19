@@ -12,14 +12,18 @@ public class ScoreText : MonoBehaviour
     private void Start()
     {
         text = GetComponent<Text>();
-        coinAmount = PlayerPrefs.GetInt("CoinAmount", coinAmount);
+
     }
 
     private void Update()
     {
+
+        coinAmount = PlayerPrefs.GetInt("CoinAmount");
+
+        Debug.Log(coinAmount + " coinamount");
+
         PlayerPrefs.SetInt("CoinAmount", coinAmount);
 
-        text.text = coinAmount.ToString();
         
     }
 

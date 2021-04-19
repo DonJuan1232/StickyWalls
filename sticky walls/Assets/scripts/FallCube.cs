@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class FallCube : MonoBehaviour
 {
 
+    public int powerNumber;
+
     public ParticleSystem explosionPlayer;
 
     public MeshRenderer playerMesh;
@@ -18,9 +20,15 @@ public class FallCube : MonoBehaviour
 
     public float waitTime;
 
-    public Color invincible;
+    public Material material01;
+    public Material material02;
+    public Material material03;
+    public Material material04;
 
-    public Color original;
+    public Color invincible01;
+    public Color invincible02;
+    public Color invincible03;
+    public Color invincible04;
 
     public GameObject deathScreen;
 
@@ -83,12 +91,31 @@ public class FallCube : MonoBehaviour
     public void Update()
     {
         waitTime = PlayerPrefs.GetFloat("WaitTime2");
+
+        powerNumber = PlayerPrefs.GetInt("powerNumber");
     }
 
     IEnumerator invisOn()
     {
 
-        gameObject.GetComponent<Renderer>().material.color = invincible;
+        if(powerNumber == 0)
+        {
+            gameObject.GetComponent<Renderer>().material.color = invincible01;
+        }
+        else if(powerNumber == 1)
+        {
+            gameObject.GetComponent<Renderer>().material.color = invincible02;
+        }
+        else if (powerNumber == 2)
+        {
+            gameObject.GetComponent<Renderer>().material.color = invincible03;
+        }
+        else if (powerNumber == 3)
+        {
+            gameObject.GetComponent<Renderer>().material.color = invincible04;
+        }
+
+
 
 
 
@@ -97,7 +124,24 @@ public class FallCube : MonoBehaviour
 
         invins = false;
 
-        gameObject.GetComponent<Renderer>().material.color = original;
+        if (powerNumber == 0)
+        {
+            gameObject.GetComponent<Renderer>().material = material01;
+        }
+        else if (powerNumber == 1)
+        {
+            gameObject.GetComponent<Renderer>().material = material02;
+        }
+        else if (powerNumber == 2)
+        {
+            gameObject.GetComponent<Renderer>().material = material03;
+        }
+        else if (powerNumber == 3)
+        {
+            gameObject.GetComponent<Renderer>().material = material04;
+        }
+
+        
 
         yield return 0;
     }
@@ -132,7 +176,22 @@ public class FallCube : MonoBehaviour
     {
         StopCoroutine(invisOn());
 
-        gameObject.GetComponent<Renderer>().material.color = original;
+        if (powerNumber == 0)
+        {
+            gameObject.GetComponent<Renderer>().material = material01;
+        }
+        else if (powerNumber == 1)
+        {
+            gameObject.GetComponent<Renderer>().material = material02;
+        }
+        else if (powerNumber == 2)
+        {
+            gameObject.GetComponent<Renderer>().material = material03;
+        }
+        else if (powerNumber == 3)
+        {
+            gameObject.GetComponent<Renderer>().material = material04;
+        }
 
         invins = false;
     }

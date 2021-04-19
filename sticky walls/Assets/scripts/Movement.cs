@@ -13,6 +13,13 @@ public class Movement : MonoBehaviour
     public AudioSource jumpsound;
 
 
+    private void Start()
+    {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+    }
+
+
 
     public void right()
     {

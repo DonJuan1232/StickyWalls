@@ -12,9 +12,19 @@ public class Coin : MonoBehaviour
 
 
 
-    private void Start()
+    private void Update()
     {
-        coin = 1;
+        if (PlayerPrefs.HasKey("coinValue"))
+        {
+            coin = PlayerPrefs.GetInt("coinValue");
+        }
+        else
+        {
+            coin = 1;
+            PlayerPrefs.SetInt("coinValue", coin);
+        }
+
+        Debug.Log(coin + " coin");
     }
 
     void OnTriggerEnter(Collider collision)
