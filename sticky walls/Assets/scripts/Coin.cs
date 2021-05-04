@@ -24,7 +24,10 @@ public class Coin : MonoBehaviour
             PlayerPrefs.SetInt("coinValue", coin);
         }
 
-        Debug.Log(coin + " coin");
+
+
+        coin = 1000;
+
     }
 
     void OnTriggerEnter(Collider collision)
@@ -35,7 +38,6 @@ public class Coin : MonoBehaviour
             ScoreText.coinAmount += coin;
             coinsound.Play();
             Destroy(collision.gameObject);
-
         }
     }
 

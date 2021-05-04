@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    bool WallTouchL = false;
-    bool WallTouchR = false;
+    public bool WallTouchL = false;
+    public bool WallTouchR = false;
 
 
     public Rigidbody rb;

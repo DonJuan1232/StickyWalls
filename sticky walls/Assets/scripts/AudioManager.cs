@@ -4,24 +4,32 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public AssetSounds[] sounds;
 
-    void Awake()
+    public int muted;
+
+    public void Start()
     {
-        foreach (AssetSounds s in sounds)
+        if (PlayerPrefs.HasKey("muted"))
         {
-            s.source = gameObject.AddComponent<AudioSource>();
-            s.source.clip = s.clip;
-
-            s.source.volume = s.volume;
-            s.source.pitch = s.pitch;
+            muted = PlayerPrefs.GetInt("muted");
         }
+
+        if (muted == 1)
+        {
+            AudioListener.volume = 0;
+
+        }
+        else
+        {
+            AudioListener.volume = 1;
+
+        }
+
+
+        /*Debug.Log("mute1 " + PlayerPrefs.GetInt("muted"));
+        Debug.Log("mute2 " + muted);*/
     }
 
-    public void Play (string name)
-    {
-        AssetSounds s = Array.Find(sounds, sound => sound.name == name);
-        s.source.Play();
-    }
+
 
 }

@@ -32,11 +32,31 @@ public class FallCube : MonoBehaviour
 
     public GameObject deathScreen;
 
+    public GameObject panel;
+    public GameObject continueAdd;
+
     public AudioSource deathsound;
     public AudioSource invissound;
 
     /*public animator deathAnim; */
 
+    public static int counter = 0;
+
+
+    public void Start()
+    {
+        if (counter == 7)
+        {
+            counter = 0;
+            panel.GetComponent<GoogleAds>().ShowInterstitialAd();
+            Debug.Log("works1");
+        }
+        else
+        {
+            counter += 1;
+            
+        }
+    }
 
     private void OnCollisionEnter(Collision collision)
     {
@@ -146,6 +166,18 @@ public class FallCube : MonoBehaviour
         yield return 0;
     }
 
+    public void undoFreeze()
+    {
+        rb.constraints = RigidbodyConstraints.None | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotation;
+
+        continueAdd.SetActive(false);
+    }
+
+    public void continueGame()
+    {
+        deathScreen.SetActive(false);
+
+    }
 
     IEnumerator killPlayer()
     {
@@ -159,6 +191,7 @@ public class FallCube : MonoBehaviour
 
         explosionPlayer.Play();
 
+        
 
         yield return new WaitForSeconds(0.75f);
 
@@ -166,6 +199,7 @@ public class FallCube : MonoBehaviour
 
         deathScreen.SetActive(true);
 
+        
 
 
         yield return 0;

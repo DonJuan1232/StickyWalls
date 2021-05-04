@@ -6,21 +6,23 @@ using UnityEngine.UI;
 
 public class ScoreText : MonoBehaviour
 {
-    Text text;
+    public Text text;
+    string text2;
     public static int coinAmount;
 
     private void Start()
     {
-        text = GetComponent<Text>();
+
+        coinAmount = PlayerPrefs.GetInt("CoinAmount");
 
     }
 
     private void Update()
     {
 
-        coinAmount = PlayerPrefs.GetInt("CoinAmount");
+        text2 = coinAmount.ToString();
 
-        Debug.Log(coinAmount + " coinamount");
+        text.text = text2;
 
         PlayerPrefs.SetInt("CoinAmount", coinAmount);
 

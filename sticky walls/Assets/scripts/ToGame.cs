@@ -16,4 +16,7 @@ public class ToGame : MonoBehaviour
         shop.SetActive(false);
         about.SetActive(false);
     }
+
+
+    
 }
